@@ -4,7 +4,7 @@ import manager.Discount;
 
 import java.time.LocalDate;
 
-public class CrispyFlour extends Material implements Discount {
+public class CrispyFlour extends Material  {
 
 
     double quanlity;

@@ -1,8 +1,10 @@
 package material;
 
+import manager.Discount;
+
 import java.time.LocalDate;
 
-public abstract class Material {
+public abstract class Material implements Discount {
     private String id ;
     private String name;
     private LocalDate manafacturingDate;
@@ -40,6 +42,7 @@ public abstract class Material {
     }
 
     public void setManafacturingDate(LocalDate manafacturingDate) {
+
         this.manafacturingDate = manafacturingDate;
     }
 
@@ -53,4 +56,5 @@ public abstract class Material {
 
     public abstract double getAmount();
     public abstract LocalDate getExpiryDate();
+    public  abstract double getRealMoney();
 }
