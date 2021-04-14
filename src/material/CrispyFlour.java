@@ -38,14 +38,14 @@ public class CrispyFlour extends Material  {
         double realMoney= this.getAmount();
         LocalDate now= LocalDate.now();
         boolean isAfterDate = now.isAfter(getExpiryDate());
-        boolean isBefor4month = now.isBefore(getExpiryDate().minusMonths(4));
-        boolean isBefor2month = now.isBefore(getExpiryDate().minusMonths(2));
+        boolean isBefor4month = now.isBefore(getExpiryDate().minusMonths(4))|| now.isEqual(getExpiryDate().minusMonths(4)) ;
+        boolean isBefor2month = now.isBefore(getExpiryDate().minusMonths(2)) || now.isEqual(getExpiryDate().minusMonths(2)) ;
         if(isAfterDate){
             realMoney *=0;
         }
-        else if (isBefor2month){
+        else if (isBefor4month){
             realMoney *=DOUBLE_5;
-        } else if(isBefor4month){
+        } else if(isBefor2month){
             realMoney *=DOUBLE_20;
         }else
             realMoney *=DOUBLE_40;
@@ -55,3 +55,4 @@ public class CrispyFlour extends Material  {
 
     }
 }
+//&& now.isAfter(getExpiryDate().minusMonths(4))

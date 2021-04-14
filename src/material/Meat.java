@@ -39,11 +39,11 @@ public class Meat extends Material  {
             realMoney *=0;
         }
         else if (isBefor3Day){
-            realMoney *=DOUBLE_10;
+            realMoney *=DOUBLE_50;
         } else if(isBefor5Day){
             realMoney *=DOUBLE_30;
         }else
-            realMoney *=DOUBLE_50;
+            realMoney *=DOUBLE_10;
 
         return realMoney;
     }
